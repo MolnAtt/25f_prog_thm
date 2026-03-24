@@ -146,6 +146,43 @@ namespace _25f_prog_thm
 
 		static Random r = new Random();
 
+		static int[] Plusz10(int[] t)
+		{
+			int[] result  = new int[t.Length];
+
+			for (int i = 0; i < t.Length; i++)
+			{
+				result[i] = t[i] + 10;
+			}
+
+			return result;
+		}
+
+		static List<int> Páros_számai(int[] t)  // fontos, hogy listát adunk vissza, mert nem tudjuk a kiválogatott elemek számosságát az elején!
+		{
+			List<int> result = new List<int>();
+
+			for (int i = 0; i < t.Length; i++)
+			{
+				if (t[i]%2==0)
+				{
+					result.Add(t[i]);
+				}
+			}
+
+			return result;
+		}
+
+		static void Kiir(List<int> lista)
+		{
+			for (int i = 0; i < lista.Count; i++)
+			{
+				Console.Write(lista[i]);
+				Console.Write(" ");
+			}
+			Console.WriteLine();
+		}
+
 		static void Main(string[] args)
 		{
 
@@ -163,6 +200,9 @@ namespace _25f_prog_thm
 			Console.WriteLine(Benne_van_e_7_2(lista.ToArray()));
 
 
+			Kiir(lista);
+			Kiir(Plusz10(lista.ToArray()).ToList());
+			Kiir(Páros_számai(lista.ToArray()));
 		}
 
 	}
